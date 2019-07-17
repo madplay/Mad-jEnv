@@ -1,0 +1,6 @@
+# intellij
+*.idea
+*.iml
+
+# resource
+# out/
