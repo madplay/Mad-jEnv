@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<idea-plugin>
+    <id>jenvPlugin</id>
+    <name>IntelliJ IDEA plugin for jenv</name>
+    <version>0.0.3</version>
+    <vendor email="itsmetaeng@gmail.com" url="https://madplay.github.io">jenv</vendor>
+
+    <description><![CDATA[It is Intellij IDEA Plugin for Jenv]]></description>
+
+    <change-notes><![CDATA[
+        <ul> 0.0.1:
+          <li>release plugin</li>
+        <ul>
+      ]]>
+    </change-notes>
+
+    <!-- please see http://confluence.jetbrains.net/display/IDEADEV/Build+Number+Ranges for description -->
+    <idea-version since-build="181.0"/>
+
+    <application-components>
+        <component>
+            <implementation-class>com.madplay.jenv.component.MadJenvAppComponent</implementation-class>
+        </component>
+    </application-components>
+
+    <project-components>
+        <component>
+            <implementation-class>com.madplay.jenv.component.MadJenvProjectComponent</implementation-class>
+        </component>
+    </project-components>
+
+
+    <extensions defaultExtensionNs="com.intellij">
+    </extensions>
+    <actions>
+        <action id="JenvPlugin.MadJenvAction" class="com.madplay.jenv.action.MadJenvAction" text="Open MadJenv">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </action>
+    </actions>
+</idea-plugin>
