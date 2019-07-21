@@ -17,6 +17,8 @@
     <!-- please see http://confluence.jetbrains.net/display/IDEADEV/Build+Number+Ranges for description -->
     <idea-version since-build="191.0"/>
 
+    <depends>com.intellij.modules.java</depends>
+
     <application-components>
         <component>
             <implementation-class>com.madplay.jenv.component.MadJenvAppComponent</implementation-class>
