@@ -10,7 +10,6 @@ import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.madplay.jenv.MadJenvHelper;
-import org.apache.commons.lang.SystemUtils;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
@@ -30,7 +29,7 @@ public class MadJenvAppComponent implements ApplicationComponent {
     public void initComponent() {
         File jenvFile = MadJenvHelper.getJenvFile();
 
-        if (SystemUtils.IS_OS_WINDOWS) {
+        if (isWindows()) {
             jenvFile = new File("c:/jenv");
         }
 
@@ -74,6 +73,10 @@ public class MadJenvAppComponent implements ApplicationComponent {
     private Predicate<File> findCurrentVersion(List<String> installedVersions) {
         return file -> file.getName().equals(MadJenvHelper.JENV_CURRENT_VERSION)
                 && !installedVersions.contains(file.getName());
+    }
+
+    private boolean isWindows() {
+        return System.getProperty("os.name").toLowerCase().indexOf("win") >= 0;
     }
 
     @NotNull
