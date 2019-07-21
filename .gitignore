@@ -1,6 +1,6 @@
-# intellij
+# for intellij IDE
 *.idea
 *.iml
 
-# resource
-# out/
+# build results
+*.jar
