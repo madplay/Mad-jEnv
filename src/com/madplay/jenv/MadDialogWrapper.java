@@ -8,18 +8,17 @@ import com.intellij.openapi.ui.DialogWrapper;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.Arrays;
+import java.util.List;
+import java.util.OptionalInt;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 /**
  * @author kimtaeng
  * Created on 2019. 6. 12
  */
 public class MadDialogWrapper extends DialogWrapper {
-    public static String selectedJdk = "";
-
     public MadDialogWrapper() {
         super(true);
         init();
@@ -31,20 +30,30 @@ public class MadDialogWrapper extends DialogWrapper {
         JPanel dialogPanel = new JPanel(new BorderLayout());
 
         Sdk[] allJdks = ProjectJdkTable.getInstance().getAllJdks();
-        Object[] nameList = Arrays.stream(allJdks)
-                .map(Sdk::getName).collect(Collectors.toList()).toArray();
-        ComboBox nameBox = new ComboBox(nameList);
-        nameBox.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                ComboBox comboBox = (ComboBox) e.getSource();
-                String selectedVersion = (String) comboBox.getSelectedItem();
-                selectedJdk = selectedVersion;
-            }
+        List<String> versionList = Arrays.stream(allJdks)
+                .map(Sdk::getName).map(Object::toString).collect(Collectors.toList());
+        ComboBox nameBox = new ComboBox(versionList.toArray());
+        nameBox.setSelectedIndex(getCurrentVersionIndex(versionList));
+
+        nameBox.addActionListener(event -> {
+            ComboBox comboBox = (ComboBox) event.getSource();
+            String selectedVersion = (String) comboBox.getSelectedItem();
+            MadJenvHelper.setSelectedJavaVersion(selectedVersion);
         });
         dialogPanel.add(nameBox, BorderLayout.CENTER);
 
         return dialogPanel;
+    }
+
+    private int getCurrentVersionIndex(List<String> versionList) {
+        OptionalInt index = IntStream.range(0, versionList.size())
+                .filter(idx -> versionList.get(idx).equals(MadJenvHelper.getCurrentJavaVersion()))
+                .findFirst();
+
+        if(index.isPresent()) {
+            return index.getAsInt();
+        }
+        return 0;
     }
 
 

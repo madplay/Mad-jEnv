@@ -8,6 +8,11 @@ import com.intellij.openapi.projectRoots.ProjectJdkTable;
 import com.intellij.openapi.projectRoots.Sdk;
 import com.intellij.openapi.projectRoots.impl.SdkConfigurationUtil;
 import com.madplay.jenv.MadDialogWrapper;
+import com.madplay.jenv.MadJenvHelper;
+
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 
 /**
  * @author kimtaeng
@@ -21,9 +26,21 @@ public class MadJenvAction extends AnAction {
         dialogWrapper.show();
 
         if (dialogWrapper.isOK()) {
-            Sdk jdk = ProjectJdkTable.getInstance().findJdk(MadDialogWrapper.selectedJdk);
+            Sdk jdk = ProjectJdkTable.getInstance().findJdk(MadJenvHelper.getSelectedJavaVersion());
             Project project = e.getData(DataKeys.PROJECT);
+            changeJenvVersion();
             SdkConfigurationUtil.setDirectoryProjectSdk(project, jdk);
         }
+    }
+
+    private void changeJenvVersion() {
+        File jenvFile = MadJenvHelper.getJenvFile();
+        try (FileWriter fileWriter = new FileWriter(jenvFile)) {
+            fileWriter.write(MadJenvHelper.getSelectedJavaVersion());
+        } catch (IOException e) {
+            e.printStackTrace();
+            // @todo
+        }
+
     }
 }
