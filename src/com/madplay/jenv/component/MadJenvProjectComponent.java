@@ -5,10 +5,11 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.projectRoots.ProjectJdkTable;
 import com.intellij.openapi.projectRoots.Sdk;
 import com.intellij.openapi.projectRoots.impl.SdkConfigurationUtil;
-import com.intellij.openapi.vfs.VirtualFile;
 import com.madplay.jenv.MadJenvHelper;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.InputStreamReader;
 
 /**
@@ -28,11 +29,13 @@ public class MadJenvProjectComponent implements ProjectComponent {
     }
 
     public void projectOpened() {
-        VirtualFile projectBaseDir = project.getBaseDir();
-        VirtualFile jenvrcFile = projectBaseDir.findChild(MadJenvHelper.VERSION_FILE);
-        if (jenvrcFile != null && jenvrcFile.exists()) {
-            try {
-                String jdkVersion = new BufferedReader(new InputStreamReader(jenvrcFile.getInputStream())).readLine();
+        File projectJenvFile = new File(project.getBasePath() + File.separator + MadJenvHelper.VERSION_FILE);
+
+        MadJenvHelper.setProjectJenvFile(projectJenvFile);
+        if (projectJenvFile != null && projectJenvFile.exists()) {
+
+            try (BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(projectJenvFile)))) {
+                String jdkVersion = br.readLine();
                 MadJenvHelper.setCurrentJavaVersion(jdkVersion);
                 Sdk jdk = ProjectJdkTable.getInstance().findJdk(jdkVersion);
                 if (jdk != null) {
@@ -42,9 +45,5 @@ public class MadJenvProjectComponent implements ProjectComponent {
                 // @todo
             }
         }
-    }
-
-    public void projectClosed() {
-        // @todo
     }
 }

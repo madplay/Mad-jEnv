@@ -26,21 +26,22 @@ public class MadJenvAction extends AnAction {
         dialogWrapper.show();
 
         if (dialogWrapper.isOK()) {
-            Sdk jdk = ProjectJdkTable.getInstance().findJdk(MadJenvHelper.getSelectedJavaVersion());
+            String selectedVersion = MadJenvHelper.getSelectedJavaVersion();
+            Sdk jdk = ProjectJdkTable.getInstance().findJdk(selectedVersion);
             Project project = e.getData(DataKeys.PROJECT);
             changeJenvVersion();
             SdkConfigurationUtil.setDirectoryProjectSdk(project, jdk);
+            MadJenvHelper.setCurrentJavaVersion(selectedVersion);
         }
     }
 
     private void changeJenvVersion() {
-        File jenvFile = MadJenvHelper.getJenvFile();
+        File jenvFile = MadJenvHelper.getProjectJenvFile();
         try (FileWriter fileWriter = new FileWriter(jenvFile)) {
-            fileWriter.write(MadJenvHelper.getSelectedJavaVersion());
+            fileWriter.write(MadJenvHelper.getSelectedJenvVersion());
         } catch (IOException e) {
             e.printStackTrace();
             // @todo
         }
-
     }
 }

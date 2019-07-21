@@ -33,7 +33,10 @@ public class MadDialogWrapper extends DialogWrapper {
         List<String> versionList = Arrays.stream(allJdks)
                 .map(Sdk::getName).map(Object::toString).collect(Collectors.toList());
         ComboBox nameBox = new ComboBox(versionList.toArray());
-        nameBox.setSelectedIndex(getCurrentVersionIndex(versionList));
+
+        int currentVersionIndex = getCurrentVersionIndex(versionList);
+        nameBox.setSelectedIndex(currentVersionIndex);
+        MadJenvHelper.setSelectedJavaVersion(versionList.get(currentVersionIndex));
 
         nameBox.addActionListener(event -> {
             ComboBox comboBox = (ComboBox) event.getSource();
