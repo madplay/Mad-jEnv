@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <idea-plugin>
     <id>MadJenvPlugin</id>
-    <name>IntelliJ IDEA plugin for jenv</name>
+    <name>MadJenv</name>
     <version>0.0.1</version>
     <vendor email="itsmetaeng@gmail.com">madplay</vendor>
 
@@ -14,7 +14,6 @@
       ]]>
     </change-notes>
 
-    <!-- please see http://confluence.jetbrains.net/display/IDEADEV/Build+Number+Ranges for description -->
     <idea-version since-build="191.0"/>
 
     <depends>com.intellij.modules.java</depends>
