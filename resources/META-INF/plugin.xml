@@ -2,7 +2,7 @@
 <idea-plugin>
     <id>MadJenvPlugin</id>
     <name>MadJenv</name>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
     <vendor email="itsmetaeng@gmail.com">madplay</vendor>
 
     <description><![CDATA[Intellij IDEA Plugin for Jenv]]></description>
@@ -11,6 +11,10 @@
         <ul> 0.0.1:
           <li>release plugin</li>
         <ul>
+        <ul> 0.0.2:
+          <li>bug fix</li>
+          <li>Removed deprecated API</li>
+        <ul>
       ]]>
     </change-notes>
 
@@ -18,18 +22,11 @@
 
     <depends>com.intellij.modules.java</depends>
 
-    <application-components>
-        <component>
-            <implementation-class>com.madplay.jenv.component.MadJenvAppComponent</implementation-class>
-        </component>
-    </application-components>
-
     <project-components>
         <component>
             <implementation-class>com.madplay.jenv.component.MadJenvProjectComponent</implementation-class>
         </component>
     </project-components>
-
 
     <extensions defaultExtensionNs="com.intellij">
     </extensions>
