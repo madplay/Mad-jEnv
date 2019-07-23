@@ -40,8 +40,8 @@ public class MadJenvAction extends AnAction {
         try (FileWriter fileWriter = new FileWriter(jenvFile)) {
             fileWriter.write(MadJenvHelper.getSelectedJenvVersion());
         } catch (IOException e) {
-            e.printStackTrace();
             // @todo
+            System.err.println(e);
         }
     }
 }
