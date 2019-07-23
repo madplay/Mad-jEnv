@@ -62,4 +62,8 @@ public class MadJenvHelper {
     public static String getSelectedJavaVersion() {
         return selectedVersion;
     }
+
+    public static boolean isWindows() {
+        return System.getProperty("os.name").toLowerCase().indexOf("win") >= 0;
+    }
 }

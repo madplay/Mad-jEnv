@@ -18,18 +18,11 @@
 
     <depends>com.intellij.modules.java</depends>
 
-    <application-components>
-        <component>
-            <implementation-class>com.madplay.jenv.component.MadJenvAppComponent</implementation-class>
-        </component>
-    </application-components>
-
     <project-components>
         <component>
             <implementation-class>com.madplay.jenv.component.MadJenvProjectComponent</implementation-class>
         </component>
     </project-components>
-
 
     <extensions defaultExtensionNs="com.intellij">
     </extensions>
