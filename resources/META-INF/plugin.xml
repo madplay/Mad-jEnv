@@ -2,7 +2,7 @@
 <idea-plugin>
     <id>MadJenvPlugin</id>
     <name>MadJenv</name>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
     <vendor email="itsmetaeng@gmail.com">madplay</vendor>
 
     <description><![CDATA[Intellij IDEA Plugin for Jenv]]></description>
@@ -10,6 +10,10 @@
     <change-notes><![CDATA[
         <ul> 0.0.1:
           <li>release plugin</li>
+        <ul>
+        <ul> 0.0.2:
+          <li>bug fix</li>
+          <li>Removed deprecated API</li>
         <ul>
       ]]>
     </change-notes>
