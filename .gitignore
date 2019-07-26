@@ -1,6 +1,5 @@
 # for intellij IDE
 *.idea
-*.iml
 
 # build results
 *.jar
