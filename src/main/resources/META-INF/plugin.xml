@@ -1,21 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <idea-plugin>
     <id>MadJenvPlugin</id>
-    <name>MadJenv</name>
-    <version>0.0.2</version>
-    <vendor email="itsmetaeng@gmail.com">madplay</vendor>
+    <name>Mad-jEnv</name>
+    <version>0.0.3</version>
+    <vendor email="itsmetaeng@gmail.com" url="https://github.com/madplay/Mad-jEnv">madplay</vendor>
 
-    <description><![CDATA[Intellij IDEA Plugin for Jenv]]></description>
+    <description><![CDATA[
+        Mad-jEnv plugin can provide IDEA user convenience with jEnv support such as SDK automatic change.<br/>
+        Welcome to the issue <a href="https://github.com/madplay/Mad-jEenv/issues" target="_blank">tracker<a/>
+        ]]></description>
 
     <change-notes><![CDATA[
-        <ul> 0.0.1:
-          <li>release plugin</li>
+        <html>
+        <b>Changes in version 0.0.1:</b>
+        <ul>
+          <li>Release plugin</li>
         </ul>
-        <ul> 0.0.2:
+        <br/>
+
+        <b>Changes in version 0.0.2:</b>
+        <ul>
           <li>bug fix</li>
-          <li>Removed deprecated API</li>
+          <li>#1: Removed deprecated API</li>
         </ul>
-      ]]>
+        <br/>
+
+        <b>Changes in version 0.0.3:</b>
+        <ul>
+          <li>bug fix</li>
+          <li>#4: bug: Not marked as plugin project</a>
+          <li>#7: feat: convert to Gradle-based project</a>
+        </ul>
+        <br/>
+
+        </html>
+        ]]>
     </change-notes>
 
     <idea-version since-build="191.0"/>

@@ -30,6 +30,11 @@ publishPlugin {
 
 patchPluginXml {
     changeNotes """
-      gradle
+      <b>Changes in version 0.0.3:</b>
+        <ul>
+          <li>bug fix</li>
+          <li>#4: bug: Not marked as plugin project</a>
+          <li>#7: feat: convert to Gradle-based project</a>
+        </ul>
       """
 }
