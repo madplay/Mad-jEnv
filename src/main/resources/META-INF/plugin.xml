@@ -10,11 +10,11 @@
     <change-notes><![CDATA[
         <ul> 0.0.1:
           <li>release plugin</li>
-        <ul>
+        </ul>
         <ul> 0.0.2:
           <li>bug fix</li>
           <li>Removed deprecated API</li>
-        <ul>
+        </ul>
       ]]>
     </change-notes>
 
