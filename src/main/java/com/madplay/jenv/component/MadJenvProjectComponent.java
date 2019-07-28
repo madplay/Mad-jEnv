@@ -55,6 +55,8 @@ public class MadJenvProjectComponent implements ProjectComponent {
                 // @todo
                 System.err.println(e);
             }
+        } else {
+            // not exists project's local jEnv file(.java-version).
         }
     }
 
@@ -65,14 +67,15 @@ public class MadJenvProjectComponent implements ProjectComponent {
             jenvFile = new File("c:/jenv");
         }
 
-        if (jenvFile.exists()) {
+        if (jenvFile != null && jenvFile.exists()) {
             setUpJdkVersion(jenvFile);
+            MadJenvHelper.setIsJenvInstalled(true);
         }
     }
 
     private void setUpJdkVersion(File jenvFile) {
         File javaHome = new File(jenvFile, MadJenvHelper.VERSION_DIRECTORY);
-        if (javaHome.exists()) {
+        if (javaHome != null && javaHome.exists()) {
             File[] jdkVersions = javaHome.listFiles();
             if (jdkVersions != null) {
                 List<Sdk> javaSdkList = ProjectJdkTable.getInstance().getSdksOfType(JavaSdk.getInstance());

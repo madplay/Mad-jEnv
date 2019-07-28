@@ -4,6 +4,7 @@ import com.intellij.openapi.projectRoots.ProjectJdkTable;
 import com.intellij.openapi.projectRoots.Sdk;
 import com.intellij.openapi.ui.ComboBox;
 import com.intellij.openapi.ui.DialogWrapper;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.JComponent;
 import javax.swing.JPanel;
@@ -18,13 +19,15 @@ import java.util.stream.IntStream;
  * @author kimtaeng
  * Created on 2019. 6. 12
  */
-public class MadDialogWrapper extends DialogWrapper {
-    public MadDialogWrapper() {
+public class MadJenvDialog extends DialogWrapper {
+    public MadJenvDialog() {
         super(true);
         init();
         setTitle("Select JDK Version.");
+        setResizable(false);
     }
 
+    @Nullable
     @Override
     protected JComponent createCenterPanel() {
         JPanel dialogPanel = new JPanel(new BorderLayout());
@@ -58,6 +61,4 @@ public class MadDialogWrapper extends DialogWrapper {
         }
         return 0;
     }
-
-
 }
