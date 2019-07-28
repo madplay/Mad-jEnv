@@ -2,7 +2,7 @@ package com.madplay.jenv.action;
 
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.DataKeys;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.projectRoots.ProjectJdkTable;
 import com.intellij.openapi.projectRoots.Sdk;
@@ -32,7 +32,7 @@ public class MadJenvAction extends AnAction {
             if (dialogWrapper.isOK()) {
                 String selectedVersion = MadJenvHelper.getSelectedJavaVersion();
                 Sdk jdk = ProjectJdkTable.getInstance().findJdk(selectedVersion);
-                Project project = e.getData(DataKeys.PROJECT);
+                Project project = e.getData(CommonDataKeys.PROJECT);
                 changeJenvVersion();
                 SdkConfigurationUtil.setDirectoryProjectSdk(project, jdk);
                 MadJenvHelper.setCurrentJavaVersion(selectedVersion);
