@@ -19,6 +19,7 @@ public class MadJenvHelper {
     private static final File JENV_FILE = new File(new File(System.getProperty("user.home")),
             JENV_FILE_EXTENSION);
     private static File PROJECT_JENV_FILE;
+    private static boolean isJenvInstalled;
 
     public static File getJenvFile() {
         return JENV_FILE;
@@ -65,5 +66,13 @@ public class MadJenvHelper {
 
     public static boolean isWindows() {
         return System.getProperty("os.name").toLowerCase().indexOf("win") >= 0;
+    }
+
+    public static boolean isJenvInstalled() {
+        return isJenvInstalled;
+    }
+
+    public static void setIsJenvInstalled(boolean isJenvInstalled) {
+        MadJenvHelper.isJenvInstalled = isJenvInstalled;
     }
 }

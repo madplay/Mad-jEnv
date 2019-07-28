@@ -1,0 +1,40 @@
+plugins {
+    id 'java'
+    id 'org.jetbrains.intellij' version '0.4.9'
+}
+
+group 'com.madplay.madjenv'
+version '0.1.0'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+intellij {
+    version '2019.1.3'
+    intellij.updateSinceUntilBuild false
+}
+
+publishPlugin {
+    username intellijPublishUsername
+    password intellijPublishPassword
+}
+
+patchPluginXml {
+    changeNotes """
+      <b>Changes in version 0.1.0:</b></br>
+      Since this version, the project uses gradle.
+        <ul>
+          <li>#4: bug: Not marked as plugin project</li>
+          <li>#6: bug: if the jEnv is not installed, it does not work</li>
+          <li>#7: feat: convert to Gradle-based project</li>
+          <li>#11: fix: Deprecated interface AnAction is used. </li>
+        </ul>
+      """
+}

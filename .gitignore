@@ -2,5 +2,12 @@
 *.idea
 *.iml
 
-# build results
-*.jar
+# gradle
+.gradle
+/build/
+gradle-app.setting # Ignore gradle GUI config
+!gradle-wrapper.jar # Avoid ignoring Gradle wrapper jar file
+gradle.properties # Access Properties for upload & publish plugin
+
+# Other
+.DS_Store
