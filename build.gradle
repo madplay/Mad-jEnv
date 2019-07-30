@@ -29,12 +29,12 @@ publishPlugin {
 patchPluginXml {
     changeNotes """
       <b>Changes in version 0.1.0:</b></br>
-      Since this version, the project uses gradle.
+      The Project uses the gradle from this version.
         <ul>
-          <li>#4: bug: Not marked as plugin project</li>
-          <li>#6: bug: if the jEnv is not installed, it does not work</li>
-          <li>#7: feat: convert to Gradle-based project</li>
-          <li>#11: fix: Deprecated interface AnAction is used. </li>
+          <li>#4: bug: The project is not recognized as a plug-in</li>
+          <li>#6: bug: The Mad-jEnv does not work when jEnv is not installed</li>
+          <li>#7: feat: Converts the project to the gradle-based project</li>
+          <li>#11: fix: The deprecated interface(AnAction) was used</li>
         </ul>
       """
 }

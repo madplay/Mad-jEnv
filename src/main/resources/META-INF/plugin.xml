@@ -2,12 +2,12 @@
 <idea-plugin>
     <id>MadJenvPlugin</id>
     <name>Mad-jEnv</name>
-    <version>0.0.3</version>
+    <version>0.1.0</version>
     <vendor email="itsmetaeng@gmail.com" url="https://github.com/madplay/Mad-jEnv">madplay</vendor>
 
     <description><![CDATA[
-        Mad-jEnv plugin can provide IDEA user convenience with jEnv(https://www.jenv.be) support such as SDK automatic change.<br/>
-        Welcome to the issue <a href="https://github.com/madplay/Mad-jEenv/issues" target="_blank">tracker<a/>
+        Mad-jEnv plugin can provide IDEA user convenience with <a href="https://www.jenv.be" target="_blank">jEnv</a> support such as SDK automatic change.<br/>
+        If you want to improve Mad-jEnv or have questions, please refer to the <a href="https://github.com/madplay/Mad-jEnv" target="_blank">link.</a>
         ]]></description>
 
     <change-notes><![CDATA[
@@ -26,13 +26,12 @@
         <br/>
 
         <b>Changes in version 0.1.0:</b><br/>
-        Since this version, the project uses gradle.
+        The Project uses the gradle from this version.
         <ul>
-          <li>Since this version, the project uses gradle.</li>
-          <li>#4: bug: Not marked as plugin project</li>
-          <li>#6: bug: if the jEnv is not installed, it does not work</li>
-          <li>#7: feat: convert to Gradle-based project</li>
-          <li>#11: fix: Deprecated interface AnAction is used. </li>
+          <li>#4: bug: The project is not recognized as a plug-in</li>
+          <li>#6: bug: The Mad-jEnv does not work when jEnv is not installed</li>
+          <li>#7: feat: Converts the project to the gradle-based project</li>
+          <li>#11: fix: The deprecated interface(AnAction) was used</li>
         </ul>
         <br/>
 
