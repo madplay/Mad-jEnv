@@ -21,11 +21,6 @@ intellij {
     intellij.updateSinceUntilBuild false
 }
 
-publishPlugin {
-    username intellijPublishUsername
-    password intellijPublishPassword
-}
-
 patchPluginXml {
     changeNotes """
       <b>Changes in version 0.1.0:</b></br>
