@@ -2,7 +2,7 @@
 <idea-plugin>
     <id>MadJenvPlugin</id>
     <name>Mad-jEnv</name>
-    <version>0.1.0</version>
+    <version>0.1.1</version>
     <vendor email="itsmetaeng@gmail.com" url="https://github.com/madplay/Mad-jEnv">madplay</vendor>
 
     <description><![CDATA[
@@ -32,6 +32,14 @@
           <li>#6: bug: The Mad-jEnv does not work when jEnv is not installed</li>
           <li>#7: feat: Converts the project to the gradle-based project</li>
           <li>#11: fix: The deprecated interface(AnAction) was used</li>
+        </ul>
+        <br/>
+
+        <b>Changes in version 0.1.1:</b><br/>
+        <ul>
+          <li>#10: doc: Installation Guide</li>
+          <li>#15: fix: Remove the deprecated plugin upload code</li>
+          <li>#18: fix: dialog size too small</li>
         </ul>
         <br/>
 
