@@ -4,7 +4,7 @@ plugins {
 }
 
 group 'com.madplay.madjenv'
-version '0.1.0'
+version '0.1.1'
 
 sourceCompatibility = 1.8
 
@@ -23,13 +23,11 @@ intellij {
 
 patchPluginXml {
     changeNotes """
-      <b>Changes in version 0.1.0:</b></br>
-      The Project uses the gradle from this version.
+      <b>Changes in version 0.1.1:</b></br>
         <ul>
-          <li>#4: bug: The project is not recognized as a plug-in</li>
-          <li>#6: bug: The Mad-jEnv does not work when jEnv is not installed</li>
-          <li>#7: feat: Converts the project to the gradle-based project</li>
-          <li>#11: fix: The deprecated interface(AnAction) was used</li>
+          <li>#10: doc: Installation Guide</li>
+          <li>#15: fix: Remove the deprecated plugin upload code</li>
+          <li>#18: fix: dialog size too small</li>
         </ul>
       """
 }
