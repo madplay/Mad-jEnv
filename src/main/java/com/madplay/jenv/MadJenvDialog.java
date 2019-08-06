@@ -9,6 +9,7 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.util.Arrays;
 import java.util.List;
 import java.util.OptionalInt;
@@ -20,6 +21,8 @@ import java.util.stream.IntStream;
  * Created on 2019. 6. 12
  */
 public class MadJenvDialog extends DialogWrapper {
+    private static final Integer DIALOG_WIDTH_SIZE = 300;
+
     public MadJenvDialog() {
         super(true);
         init();
@@ -47,7 +50,7 @@ public class MadJenvDialog extends DialogWrapper {
             MadJenvHelper.setSelectedJavaVersion(selectedVersion);
         });
         dialogPanel.add(nameBox, BorderLayout.CENTER);
-
+        dialogPanel.setPreferredSize(new Dimension(DIALOG_WIDTH_SIZE, dialogPanel.getHeight()));
         return dialogPanel;
     }
 
