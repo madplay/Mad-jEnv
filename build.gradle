@@ -4,7 +4,7 @@ plugins {
 }
 
 group 'com.madplay.madjenv'
-version '0.1.1'
+version '0.1.2'
 
 sourceCompatibility = 1.8
 
@@ -17,17 +17,16 @@ dependencies {
 }
 
 intellij {
-    version '2019.1.3'
-    intellij.updateSinceUntilBuild false
+    version '2019.2.3'
+    plugins 'java'
+    updateSinceUntilBuild false
 }
 
 patchPluginXml {
     changeNotes """
-      <b>Changes in version 0.1.1:</b></br>
+      <b>Changes in version 0.1.2:</b><br/>
         <ul>
-          <li>#10: doc: Installation Guide</li>
-          <li>#15: fix: Remove the deprecated plugin upload code</li>
-          <li>#18: fix: dialog size too small</li>
+          <li>#21: latest jenv not compatible with latest IDEA</li>
         </ul>
       """
 }
