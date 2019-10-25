@@ -2,7 +2,7 @@
 <idea-plugin>
     <id>MadJenvPlugin</id>
     <name>Mad-jEnv</name>
-    <version>0.1.1</version>
+    <version>0.1.2</version>
     <vendor email="itsmetaeng@gmail.com" url="https://github.com/madplay/Mad-jEnv">madplay</vendor>
 
     <description><![CDATA[
@@ -43,11 +43,17 @@
         </ul>
         <br/>
 
+        <b>Changes in version 0.1.2:</b><br/>
+        <ul>
+          <li>#21: latest jenv not compatible with latest IDEA</li>
+        </ul>
+        <br/>
+
         </html>
         ]]>
     </change-notes>
 
-    <idea-version since-build="172.0" until-build="192.0"/>
+    <idea-version since-build="172.0" until-build="193.0"/>
 
     <depends>com.intellij.modules.java</depends>
 
@@ -60,7 +66,7 @@
     <extensions defaultExtensionNs="com.intellij">
     </extensions>
     <actions>
-        <action id="JenvPlugin.MadJenvAction" class="com.madplay.jenv.action.MadJenvAction" text="Open MadJenv">
+        <action id="JenvPlugin.MadJenvAction" class="com.madplay.jenv.action.MadJenvAction" text="Open Mad-jEnv">
             <add-to-group group-id="ToolsMenu" anchor="last"/>
         </action>
     </actions>
