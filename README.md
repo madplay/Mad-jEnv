@@ -17,12 +17,12 @@
 </p>
 <p align="center">
   <a href="http://github.com/madplay">
-    <img src="https://img.shields.io/github/stars/madplay/madplay.github.io?style=social">
+    <img src="https://img.shields.io/github/stars/madplay/Mad-jEnv?style=social">
   </a>
   <a href="http://github.com/madplay" target="_blank">
     <img src="https://img.shields.io/github/followers/madplay?style=social">
   </a>
-  <img src="https://img.shields.io/github/forks/madplay/madplay.github.io?style=social">
+  <img src="https://img.shields.io/github/forks/madplay/Mad-jEnv?style=social">
 </p>
 
 # Mad-jEnv
