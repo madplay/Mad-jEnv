@@ -1,4 +1,16 @@
 <p align="center">
+  <a href="https://plugins.jetbrains.com/plugin/12761-mad-jenv" target="_blank">
+    <img src="https://img.shields.io/jetbrains/plugin/v/12761-mad-jenv?label=Mad-jEnv">
+  </a>
+  <a href="https://plugins.jetbrains.com/plugin/12761-mad-jenv" target="_blank">
+    <img src="https://img.shields.io/jetbrains/plugin/d/12761-mad-jenv">
+  </a>
+  <a href="https://github.com/madplay/Mad-jEnv/issues">
+    <img src="https://img.shields.io/github/issues-raw/madplay/Mad-jEnv">
+  </a>
+  <a href="https://github.com/madplay/Mad-jEnv/issues?q=is%3Aissue+is%3Aclosed">
+    <img src="https://img.shields.io/github/issues-closed-raw/madplay/Mad-jEnv">
+  </a>
   <a href="https://github.com/madplay/MadJenvPlugin/blob/master/LICENSE.md">
     <img src="https://img.shields.io/badge/License-MIT-blue.svg">
   </a>
