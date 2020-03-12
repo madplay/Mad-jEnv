@@ -15,6 +15,15 @@
     <img src="https://img.shields.io/badge/License-MIT-blue.svg">
   </a>
 </p>
+<p align="center">
+  <a href="http://github.com/madplay">
+    <img src="https://img.shields.io/github/stars/madplay/madplay.github.io?style=social">
+  </a>
+  <a href="http://github.com/madplay" target="_blank">
+    <img src="https://img.shields.io/github/followers/madplay?style=social">
+  </a>
+  <img src="https://img.shields.io/github/forks/madplay/madplay.github.io?style=social">
+</p>
 
 # Mad-jEnv
 The Mad-jEnv is Plugin for Intellij IDEA to use jEnv.
