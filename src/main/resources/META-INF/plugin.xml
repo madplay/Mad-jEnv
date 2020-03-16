@@ -2,7 +2,7 @@
 <idea-plugin>
     <id>MadJenvPlugin</id>
     <name>Mad-jEnv</name>
-    <version>0.1.3</version>
+    <version>1.0</version>
     <vendor email="itsmetaeng@gmail.com" url="https://github.com/madplay/Mad-jEnv">madplay</vendor>
 
     <description><![CDATA[
@@ -55,21 +55,34 @@
         </ul>
         <br/>
 
+        <b>Changes in version 1.0:</b><br/>
+        Starting with this version, the version rule changes.
+        <ul>
+          <li>#28: fix: Deprecated interface(ProjectComponent) was used</li>
+          <li>#29: feat: Expand the compatibility range</li>
+          <li>#30: feat: Removing static-based method structure</li>
+          <li>#31: feat: Update the version of the plugin for building plugins</li>
+          <li>#32: feat: Removing deprecated declarations from plugin.xml</li>
+          <li>#33: feat: Redesign the structure of the Mad-jEnv</li>
+        </ul>
+        <br/>
+
         </html>
         ]]>
     </change-notes>
 
-    <idea-version since-build="172.0" until-build="193.*"/>
+    <idea-version since-build="193.0" until-build="201.*"/>
 
     <depends>com.intellij.modules.java</depends>
 
-    <project-components>
-        <component>
-            <implementation-class>com.madplay.jenv.component.MadJenvProjectComponent</implementation-class>
-        </component>
-    </project-components>
+    <applicationListeners>
+        <listener class="com.madplay.jenv.listener.ProjectListener"
+                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
+    </applicationListeners>
 
     <extensions defaultExtensionNs="com.intellij">
+        <applicationService serviceImplementation="com.madplay.jenv.service.MadJenvService"/>
+        <applicationService serviceImplementation="com.madplay.jenv.service.MadJenvStateService"/>
     </extensions>
     <actions>
         <action id="JenvPlugin.MadJenvAction" class="com.madplay.jenv.action.MadJenvAction" text="Open Mad-jEnv">
