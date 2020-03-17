@@ -2,6 +2,7 @@ package com.madplay.jenv.config;
 
 import java.text.DecimalFormat;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
@@ -51,7 +52,12 @@ public class MadJenvState {
 	}
 
 	public String getFormattedJavaVersion() {
+		if (StringUtils.isBlank(currentJavaVersion)) {
+			return StringUtils.EMPTY;
+		}
+
 		double parsed = Double.parseDouble(currentJavaVersion);
+
 		if (parsed >= 10.0) {
 			DecimalFormat format = new DecimalFormat();
 			format.setDecimalSeparatorAlwaysShown(false);
