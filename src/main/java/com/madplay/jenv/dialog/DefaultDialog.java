@@ -9,14 +9,18 @@ import java.util.Map;
 import javax.swing.JComponent;
 import javax.swing.JLabel;
 
+import com.madplay.jenv.constant.DialogMessage;
 import com.madplay.jenv.constant.JenvConstants;
 
 /**
  * @author madplay
  */
 public class DefaultDialog extends AbstractDialogWrapper {
-	public DefaultDialog() {
-		setTitle("You have to install jEnv :D");
+	private DialogMessage dialogMessage;
+
+	public DefaultDialog(DialogMessage message) {
+		this.dialogMessage = message;
+		setTitle(dialogMessage.getTitle());
 	}
 
 	@Override
@@ -29,11 +33,9 @@ public class DefaultDialog extends AbstractDialogWrapper {
 
 	@Override
 	protected Map<String, JComponent> makeComponents() {
-		String message = "<html>Can't find jEnv :( <br/>" +
-			"If you click OK button, go to jEev installation guide.</html>";
 		new HashMap<>() {
 			{
-				put("guideLabel", new JLabel(message));
+				put("guideLabel", new JLabel(dialogMessage.getDescription()));
 			}
 		};
 		return null;
