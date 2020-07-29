@@ -18,6 +18,7 @@ public class MadJenvState {
 	private String projectJenvFilePath;
 	private String currentJavaVersion;
 	private boolean isJenvInstalled;
+	private boolean isJavaInstalled;
 
 	public Project getProject() {
 		return project;
@@ -49,6 +50,14 @@ public class MadJenvState {
 
 	public void setJenvInstalled(boolean jenvInstalled) {
 		isJenvInstalled = jenvInstalled;
+	}
+
+	public boolean isJavaInstalled() {
+		return isJavaInstalled;
+	}
+
+	public void setJavaInstalled(boolean javaInstalled) {
+		isJavaInstalled = javaInstalled;
 	}
 
 	public String getFormattedJavaVersion() {

@@ -2,10 +2,15 @@ package com.madplay.jenv.service;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.Objects;
+import java.util.stream.Collectors;
+
+import org.apache.commons.collections.CollectionUtils;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.projectRoots.ProjectJdkTable;
@@ -21,26 +26,6 @@ import com.madplay.jenv.constant.JenvConstants;
 public class MadJenvService {
 
 	public void initProject(Project project) {
-		MadJenvState state = Objects.requireNonNull(MadJenvStateService.getInstance().getState());
-		File projectJenvFile = new File(project.getBasePath() + File.separator + JenvConstants.VERSION_FILE.getName());
-
-		if (projectJenvFile != null && projectJenvFile.exists()) {
-			state.setProjectJenvFilePath(projectJenvFile.getPath());
-
-			try {
-				Path path = Paths.get(projectJenvFile.getPath());
-				String jdkVersion = Files.readAllLines(path).get(0);
-
-				state.setCurrentJavaVersion(jdkVersion);
-				Sdk jdk = ProjectJdkTable.getInstance().findJdk(state.getFormattedJavaVersion());
-				if (jdk != null) {
-					SdkConfigurationUtil.setDirectoryProjectSdk(project, jdk);
-				}
-			} catch (Exception e) {
-				System.err.println(e);
-			}
-		}
-
 		File jenvFile = new File(System.getProperty("user.home") + File.separator
 			+ JenvConstants.JENV_FILE_EXTENSION.getName());
 
@@ -48,9 +33,37 @@ public class MadJenvService {
 			jenvFile = new File("c:/jenv");
 		}
 
+		MadJenvState state = Objects.requireNonNull(MadJenvStateService.getInstance().getState());
+
 		if (jenvFile != null && jenvFile.exists()) {
 			state.setJenvInstalled(true);
 		}
+
+		if (CollectionUtils.isNotEmpty(MadJenvHelper.getAllJdkVersionList())) {
+			state.setJavaInstalled(true);
+		}
+
+		File projectJenvFile = new File(project.getBasePath() + File.separator + JenvConstants.VERSION_FILE.getName());
+
+		if (projectJenvFile == null || !projectJenvFile.exists()) {
+			makeProjectJenvFile(projectJenvFile.getPath());
+		}
+
+		state.setProjectJenvFilePath(projectJenvFile.getPath());
+
+		try {
+			Path path = Paths.get(projectJenvFile.getPath());
+			String jdkVersion = Files.readAllLines(path).get(0);
+
+			state.setCurrentJavaVersion(jdkVersion);
+			Sdk jdk = ProjectJdkTable.getInstance().findJdk(state.getFormattedJavaVersion());
+			if (jdk != null) {
+				SdkConfigurationUtil.setDirectoryProjectSdk(project, jdk);
+			}
+		} catch (Exception e) {
+			System.err.println(e);
+		}
+
 	}
 
 	public void changeJenvVersion() {
@@ -66,6 +79,16 @@ public class MadJenvService {
 			} catch (IOException e) {
 				System.err.println(e);
 			}
+		}
+	}
+
+	private void makeProjectJenvFile(String path) {
+		try {
+			Files.write(Paths.get(path),
+				MadJenvHelper.getAllJdkVersionList().stream().limit(1).collect(Collectors.toList()),
+				StandardCharsets.UTF_8, StandardOpenOption.CREATE);
+		} catch (IOException e) {
+			System.err.println(e);
 		}
 	}
 }
