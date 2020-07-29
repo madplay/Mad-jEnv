@@ -73,6 +73,13 @@
         </ul>
         <br/>
 
+        <b>Changes in version 1.2:</b><br/>
+        <ul>
+          <li>#40: Update to work on IntelliJ-2020.2</li>
+          <li>#41: fix: Handling when there are no .java-version file</li>
+        </ul>
+        <br/>
+
         </html>
         ]]>
     </change-notes>
