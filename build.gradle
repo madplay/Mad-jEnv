@@ -4,7 +4,7 @@ plugins {
 }
 
 group 'com.madplay.madjenv'
-version '1.1'
+version '1.2'
 
 sourceCompatibility = 11
 
@@ -18,16 +18,17 @@ dependencies {
 }
 
 intellij {
-    version '2019.3'
+    version '2020.2'
     plugins 'java'
     updateSinceUntilBuild false
 }
 
 patchPluginXml {
     changeNotes """
-      <b>Changes in version 1.1:</b><br/>
+      <b>Changes in version 1.2:</b><br/>
         <ul>
-          <li>#36:bug: An error occurs when opening a project without JDK version setting</li>
+          <li>#40: Update to work on IntelliJ-2020.2</li>
+          <li>#41: fix: Handling when there are no .java-version file</li>
         </ul>
         <br/>
       """
