@@ -2,7 +2,7 @@
 <idea-plugin>
     <id>MadJenvPlugin</id>
     <name>Mad-jEnv</name>
-    <version>1.1</version>
+    <version>1.2</version>
     <vendor email="itsmetaeng@gmail.com" url="https://github.com/madplay/Mad-jEnv">madplay</vendor>
 
     <description><![CDATA[
@@ -77,7 +77,7 @@
         ]]>
     </change-notes>
 
-    <idea-version since-build="193.0" until-build="201.*"/>
+    <idea-version since-build="193.0" until-build="202.*"/>
 
     <depends>com.intellij.modules.java</depends>
 

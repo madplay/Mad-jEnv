@@ -4,7 +4,7 @@ plugins {
 }
 
 group 'com.madplay.madjenv'
-version '1.1'
+version '1.2'
 
 sourceCompatibility = 11
 
@@ -18,7 +18,7 @@ dependencies {
 }
 
 intellij {
-    version '2019.3'
+    version '2020.2'
     plugins 'java'
     updateSinceUntilBuild false
 }
