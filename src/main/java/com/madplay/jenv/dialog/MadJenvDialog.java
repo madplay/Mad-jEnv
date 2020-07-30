@@ -13,6 +13,7 @@ import com.intellij.openapi.ui.ComboBox;
 import com.intellij.openapi.ui.DialogWrapper;
 import com.madplay.jenv.MadJenvHelper;
 import com.madplay.jenv.config.MadJenvState;
+import com.madplay.jenv.constant.DialogMessage;
 import com.madplay.jenv.service.MadJenvService;
 import com.madplay.jenv.service.MadJenvStateService;
 
@@ -23,8 +24,9 @@ public class MadJenvDialog extends AbstractDialogWrapper {
 
 	private ComboBox<String> comboBox;
 
-	public MadJenvDialog() {
-		setTitle("Select JDK Version.");
+	public MadJenvDialog(DialogMessage dialogMessage) {
+		super(dialogMessage);
+		setTitle(dialogMessage.getTitle());
 	}
 
 	@Override

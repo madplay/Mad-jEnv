@@ -29,6 +29,11 @@ public class MadJenvAction extends AnAction {
 			return;
 		}
 
-		new MadJenvDialog().show();
+		if (!state.isProjectJenvExists()) {
+			new DefaultDialog(DialogMessage.NOT_FOUND_PROJECT_JAVA_VERSION).show();
+			return;
+		}
+
+		new MadJenvDialog(DialogMessage.SELECT_JDK_VERSION).show();
 	}
 }
