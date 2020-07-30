@@ -10,6 +10,7 @@ import javax.swing.JPanel;
 import org.jetbrains.annotations.Nullable;
 
 import com.intellij.openapi.ui.DialogWrapper;
+import com.madplay.jenv.constant.DialogMessage;
 
 /**
  * @author madplay
@@ -20,9 +21,11 @@ public abstract class AbstractDialogWrapper extends DialogWrapper {
 
 	protected JPanel panel;
 	protected Map<String, JComponent> componentMap;
+	protected DialogMessage dialogMessage;
 
-	public AbstractDialogWrapper() {
+	public AbstractDialogWrapper(DialogMessage dialogMessage) {
 		super(true);
+		this.dialogMessage = dialogMessage;
 		setTitle(DEFAULT_TITLE);
 		setResizable(false);
 		componentMap = makeComponents();

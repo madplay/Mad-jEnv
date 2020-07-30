@@ -16,10 +16,8 @@ import com.madplay.jenv.constant.JenvConstants;
  * @author madplay
  */
 public class DefaultDialog extends AbstractDialogWrapper {
-	private DialogMessage dialogMessage;
-
-	public DefaultDialog(DialogMessage message) {
-		this.dialogMessage = message;
+	public DefaultDialog(DialogMessage dialogMessage) {
+		super(dialogMessage);
 		setTitle(dialogMessage.getTitle());
 	}
 
@@ -33,18 +31,21 @@ public class DefaultDialog extends AbstractDialogWrapper {
 
 	@Override
 	protected Map<String, JComponent> makeComponents() {
-		new HashMap<>() {
+		return new HashMap<>() {
 			{
 				put("guideLabel", new JLabel(dialogMessage.getDescription()));
 			}
 		};
-		return null;
 	}
 
 	@Override
 	protected void doOKAction() {
 		try {
-			Desktop.getDesktop().browse(new URI(JenvConstants.JENV_INSTALL_URL.getName()));
+			if(dialogMessage == DialogMessage.NOT_INSTALLED_JENV) {
+				Desktop.getDesktop().browse(new URI(JenvConstants.JENV_INSTALL_URL.getName()));
+			} else {
+				this.close(OK_EXIT_CODE);
+			}
 		} catch (Exception ex) {
 			System.err.println(ex);
 		}

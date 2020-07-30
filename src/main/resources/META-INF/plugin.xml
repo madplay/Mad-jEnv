@@ -2,7 +2,7 @@
 <idea-plugin>
     <id>MadJenvPlugin</id>
     <name>Mad-jEnv</name>
-    <version>1.2</version>
+    <version>1.2a</version>
     <vendor email="itsmetaeng@gmail.com" url="https://github.com/madplay/Mad-jEnv">madplay</vendor>
 
     <description><![CDATA[
@@ -77,6 +77,12 @@
         <ul>
           <li>#40: Update to work on IntelliJ-2020.2</li>
           <li>#41: fix: Handling when there are no .java-version file</li>
+        </ul>
+        <br/>
+
+        <b>Changes in version 1.2a:</b><br/>
+        <ul>
+          <li>#44: bug: Always creates .java-version file</li>
         </ul>
         <br/>
 
