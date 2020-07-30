@@ -45,8 +45,8 @@ public class MadJenvService {
 
 		File projectJenvFile = new File(project.getBasePath() + File.separator + JenvConstants.VERSION_FILE.getName());
 
-		if (projectJenvFile == null || !projectJenvFile.exists()) {
-			makeProjectJenvFile(projectJenvFile.getPath());
+		if (projectJenvFile != null && projectJenvFile.exists()) {
+			state.setProjectJenvExists(true);
 		}
 
 		state.setProjectJenvFilePath(projectJenvFile.getPath());
@@ -79,16 +79,6 @@ public class MadJenvService {
 			} catch (IOException e) {
 				System.err.println(e);
 			}
-		}
-	}
-
-	private void makeProjectJenvFile(String path) {
-		try {
-			Files.write(Paths.get(path),
-				MadJenvHelper.getAllJdkVersionList().stream().limit(1).collect(Collectors.toList()),
-				StandardCharsets.UTF_8, StandardOpenOption.CREATE);
-		} catch (IOException e) {
-			System.err.println(e);
 		}
 	}
 }
