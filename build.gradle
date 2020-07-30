@@ -4,7 +4,7 @@ plugins {
 }
 
 group 'com.madplay.madjenv'
-version '1.2'
+version '1.2a'
 
 sourceCompatibility = 11
 
@@ -25,10 +25,9 @@ intellij {
 
 patchPluginXml {
     changeNotes """
-      <b>Changes in version 1.2:</b><br/>
+      <b>Changes in version 1.2a:</b><br/>
         <ul>
-          <li>#40: Update to work on IntelliJ-2020.2</li>
-          <li>#41: fix: Handling when there are no .java-version file</li>
+          <li>#44: bug: Always creates .java-version file</li>
         </ul>
         <br/>
       """
