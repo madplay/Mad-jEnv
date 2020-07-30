@@ -45,8 +45,8 @@ public class MadJenvService {
 
 		File projectJenvFile = new File(project.getBasePath() + File.separator + JenvConstants.VERSION_FILE.getName());
 
-		if (projectJenvFile == null || !projectJenvFile.exists()) {
-			state.setProjectJenvExists(false);
+		if (projectJenvFile != null && projectJenvFile.exists()) {
+			state.setProjectJenvExists(true);
 		}
 
 		state.setProjectJenvFilePath(projectJenvFile.getPath());
