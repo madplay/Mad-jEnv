@@ -44,6 +44,11 @@ It can provide IDEA user convenience with jEnv(https://www.jenv.be) support such
 
 - Download the [latest release](https://github.com/madplay/Mad-jEnv/releases/latest) and install it manually using <kbd>Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>Install Plugin from Disk...</kbd>
 
+## Usage
+
+List SDKs (<kbd>File</kbd> > <kbd>Project Structure</kbd> > <kbd>SDKs</kbd>) then click on `+` (`Add New SDK`) to add a JEnv-declared JDK, listed in `Detected SDKs`:
+![SDKs](intellij-idea-sdks.png)
+
 ## License
 
 This project is licensed under [MIT License](https://github.com/madplay/MadJenvPlugin/blob/master/LICENSE.md)
