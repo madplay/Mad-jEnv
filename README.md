@@ -26,22 +26,29 @@
 </p>
 
 # Mad-jEnv
-The Mad-jEnv is Plugin for Intellij IDEA to use jEnv.
+
+The Mad-jEnv is Plugin for IntelliJ IDEA to use jEnv.
 It can provide IDEA user convenience with jEnv(https://www.jenv.be) support such as SDK automatic change.
 
-<br/><br/>
-
 ## Installation Guide
-###  Using IDE plugin system on MacOS:
+
+### Using IDE plugin system on MacOS:
+
 - <kbd>Preferences</kbd> > <kbd>Settings</kbd> > <kbd>Plugins</kbd> > <kbd>Browse repositories...</kbd> > <kbd>Search for "Mad-jEnv"</kbd> > <kbd>Install Plugin</kbd>
 - **If your IDE version is 2019.1 or higher,** 
   - <kbd>Preferences</kbd> > <kbd>Settings</kbd> > <kbd>Plugins</kbd> > <kbd>Search Plugins in marketplace...</kbd> > <kbd>Search for "Mad-jEnv"</kbd> > <kbd>Install Plugin</kbd>
 ### Using IDE plugin system on Windows:
 - <kbd>File</kbd> > <kbd>Settings</kbd> > <kbd>Plugins</kbd> > <kbd>Browse repositories...</kbd> > <kbd>Search for "Mad-jEnv"</kbd> > <kbd>Install Plugin</kbd>
+
 ### Manual installation:
+
 - Download the [latest release](https://github.com/madplay/Mad-jEnv/releases/latest) and install it manually using <kbd>Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>Install Plugin from Disk...</kbd>
-  
-<br/>
-   
+
+## Usage
+
+List SDKs (<kbd>File</kbd> > <kbd>Project Structure</kbd> > <kbd>SDKs</kbd>) then click on `+` (`Add New SDK`) to add a JEnv-declared JDK, listed in `Detected SDKs`:
+![SDKs](intellij-idea-sdks.png)
+
 ## License
+
 This project is licensed under [MIT License](https://github.com/madplay/MadJenvPlugin/blob/master/LICENSE.md)
