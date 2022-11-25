@@ -1,38 +1,34 @@
 plugins {
-    id 'java'
-    id 'org.jetbrains.intellij' version '0.6.5'
+	id 'java'
+	id 'org.jetbrains.intellij' version '1.10.0'
 }
 
 group 'com.madplay.madjenv'
-version '1.3'
+version '1.4'
 
-sourceCompatibility = 11
+sourceCompatibility = 17
 
 repositories {
-    mavenCentral()
+	mavenCentral()
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
-    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
+	implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.12.0'
 }
 
 intellij {
-    version '2020.3'
-    plugins 'java'
-    updateSinceUntilBuild false
+	version.set('2022.2')
+	plugins = ['java']
+	updateSinceUntilBuild.set(false)
 }
 
 patchPluginXml {
-    changeNotes """
-      <b>Changes in version 1.3:</b><br/>
+	changeNotes.set("""
+      <b>Changes in version 1.4:</b><br/>
         <ul>
-          <li>#45: fix: Not compatible with IntelliJ IDEA 2020.3</li>
-          <li>#47: Needs Documentation</li>
-          <li>#48: Version 1.2a will not be installed</li>
-          <li>#52: Update to Gradle 6.x version</li>
-          <li>#54: Update to building plugins for Intellij IDE</li>
+          <li>#57: IntellJ Community 2020.3.3 doesn't work</li>
         </ul>
         <br/>
       """
+	)
 }
