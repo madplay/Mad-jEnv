@@ -2,7 +2,7 @@
 <idea-plugin>
     <id>MadJenvPlugin</id>
     <name>Mad-jEnv</name>
-    <version>1.3</version>
+    <version>1.4</version>
     <vendor email="itsmetaeng@gmail.com" url="https://github.com/madplay/Mad-jEnv">madplay</vendor>
 
     <description><![CDATA[
@@ -96,11 +96,17 @@
         </ul>
         <br/>
 
+        <b>Changes in version 1.4:</b><br/>
+        <ul>
+          <li>#57: IntellJ Community 2020.3.3 doesn't work</li>
+        </ul>
+        <br/>
+
         </html>
         ]]>
     </change-notes>
 
-    <idea-version since-build="193.0" until-build="203.*"/>
+    <idea-version since-build="193.0" until-build="222.*"/>
 
     <depends>com.intellij.modules.java</depends>
 
